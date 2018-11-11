@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<table class="table">
+  <tr>
+    <th>値</th>
+    <th>index</th>
+    <th>first</th>
+    <th>last</th>
+    <th>odd</th>
+    <th>even</th>
+  </tr>
+  <tr *ngFor="let obj of data; index as i; first as first; last as last; odd as odd; even as even;">
+    <td>{{obj}}</td>
+    <td>{{i}}</td>
+    <td>{{first ? '〇': '―'}}</td>
+    <td>{{last ? '〇': '―'}}</td>
+    <td>{{odd ? '〇': '―'}}</td>
+    <td>{{even ? '〇': '―'}}</td>
+  </tr>
+</table>

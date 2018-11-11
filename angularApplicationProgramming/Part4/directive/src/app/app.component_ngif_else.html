@@ -1,0 +1,7 @@
+<!--The content below is only a placeholder and can be replaced.-->
+表示/非表示 <input type="checkbox" (change)="show()" />
+<div *ngIf="isShow; else elseContent">{{isShow}}表示している。</div>
+<ng-template #elseContent>
+  <h3 style="color:Red">非表示</h3>
+</ng-template>
+
