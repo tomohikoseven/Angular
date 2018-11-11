@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>form test1</h1>
+<form #myForm="ngForm" (ngSubmit)="show()" novalidate>
+  <div>
+    <label for="mail">メールアドレス</label>
+    <input id="mail" name="mail" type="email" [(ngModel)]="user.mail" #mail="ngModel" required email/>
+    <span *ngIf="mail.errors?.required">メールアドレスは必須です。</span>
+    <span *ngIf="mail.errors?.email">メールアドレスの形式で入力してください。</span>
+    <div>aaa:{{user.mail}}</div>
+  </div>
+  <div>
+    <input type="submit" value="送信" [disabled]="myForm.invalid" />
+  </div>
+</form>
