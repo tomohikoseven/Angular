@@ -6,17 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selected = 'dog';
+  selected = "hamster";
   data = [
-    {label:'犬', value:'dog' },
-    {label:'猫', value:'cat' },
-    {label:'ハムスター', value:'hamster' },
-    {label:'金魚', value:'fish'},
-    {label:'亀', value:'turtle'}
+    {label:'犬', value:'dog', disabled: false },
+    {label:'猫', value:'cat', disabled: false },
+    {label:'ハムスター', value:'hamster', disabled: false },
+    {label:'金魚', value:'fish', disabled: true},
+    {label:'亀', value:'turtle', disabled: false}
   ];
 
-  show(i: number) {
-    console.log('現在値(ラベル):' + this.data[i].label );
-    console.log('現在値(値):'    + this.data[i].value );
+  show() {
+    console.log("現在値:" + this.selected);
   }
 }

@@ -1,12 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <h1>form test1</h1>
 <form #myForm="ngForm">
-  <ng-container *ngFor="let item of data; index as i">
-    <label>
-      <input type="radio" name="animal"
-        [(ngModel)]="selected"
-        [value]="item.value" [checked]="selected == item.value"
-        (change)="show(i)">{{item.label}}
-    </label><br />
-  </ng-container>
+  <select name="animal" [(ngModel)]="selected" (change)="show()">
+    <option value="">ペットを選択してください。</option>
+    <option *ngFor="let item of data"
+      [value]="item.value" [disabled]="item.disabled"
+      [selected]="item.value === selected">{{item.label}}</option>
+  </select>
 </form>
