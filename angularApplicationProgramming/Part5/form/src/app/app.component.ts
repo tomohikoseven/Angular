@@ -15,7 +15,8 @@ export class AppComponent {
     {label:'亀', value:'turtle', disabled: false}
   ];
 
-  show() {
-    console.log("現在値:" + this.selected);
+  show( index ) {
+    console.log("現在値:" + this.data[index].label);
+    console.log("selected:" + this.selected);
   }
 }

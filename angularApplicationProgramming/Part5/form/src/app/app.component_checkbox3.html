@@ -1,0 +1,10 @@
+<h1>Check Box</h1>
+<select [(ngModel)]="selected" (change)="show()">
+  <option *ngFor="let item of data"
+    [value]="item.value"
+    [disabled]="item.disabled"
+    >{{item.label}}</option>
+</select>
+<p>
+{{selected}}
+</p>

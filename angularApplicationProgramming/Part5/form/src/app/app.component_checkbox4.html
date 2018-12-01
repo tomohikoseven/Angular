@@ -1,0 +1,6 @@
+<h1>Check Box Test</h1>
+<select name="animal" [(ngModel)]="selected" (change)="show()">
+  <option *ngFor="let item of data"
+    [value]="item.value"
+    [disabled]="item.disabled">{{item.label}}</option>
+</select>
