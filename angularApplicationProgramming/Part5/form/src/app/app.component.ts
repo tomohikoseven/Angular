@@ -19,4 +19,10 @@ export class AppComponent {
     console.log("現在値:" + this.data[index].label);
     console.log("selected:" + this.selected);
   }
+  sortOrders: string[] = ["Year", "Title", "Author"];
+  selectedSortOrder: string = "Sort by...";
+
+  ChangeSortOrder(newSortOrder: string) { 
+    this.selectedSortOrder = newSortOrder;
+  }
 }

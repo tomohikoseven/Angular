@@ -1,0 +1,10 @@
+<h1>Check Box Test</h1>
+<ng-container *ngFor="let item of data; index as i">
+  <input type="radio" name="animal"
+    [(ngModel)]="selected"
+    [value]="item.value"
+    (change)="show(i)"
+    [checked]="selected == item.value"
+    [disabled]="item.disabled"
+    />{{item.label}}
+</ng-container>

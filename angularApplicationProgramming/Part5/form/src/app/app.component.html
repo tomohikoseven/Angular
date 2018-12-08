@@ -1,10 +1,41 @@
-<h1>Check Box Test</h1>
-<ng-container *ngFor="let item of data; index as i">
-  <input type="radio" name="animal"
-    [(ngModel)]="selected"
-    [value]="item.value"
-    (change)="show(i)"
-    [checked]="selected == item.value"
-    [disabled]="item.disabled"
-    />{{item.label}}
-</ng-container>
+<p>ng-bootstrap = 4.0.0</p>
+<p>bootstrap = 4.1.3</p>
+<div class="row">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{selectedSortOrder}}</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button class="dropdown-item" *ngFor="let sortOrder of sortOrders" (click)="ChangeSortOrder(sortOrder)">{{sortOrder}}</button>
+      </div>
+    </div>
+  </div>
+
+  <li ngbDropdown class="d-inline-block">
+    <a ngbDropdownToggle href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+      <b><small>{{selectedSortOrder}}</small></b> <span class="caret"></span>
+    </a>
+    <ul ngbDropdownMenu class="dropdown-menu" >
+    <li  class="dropdown-item" *ngFor="let sortOrder of sortOrders" (click)="ChangeSortOrder(sortOrder)">{{sortOrder}}</li>
+    </ul>
+  </li>
+
+  <div class="col text-center">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="sortMenu" ngbDropdownToggle>{{selectedSortOrder}}</button>
+      <div class="dropdown-menu" aria-labelledby="sortMenu">
+        <button class="dropdown-item" *ngFor="let sortOrder of sortOrders" (click)="ChangeSortOrder(sortOrder)" >{{sortOrder}}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col text-right">
+    <div ngbDropdown placement="top-right" class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>Toggle dropup</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+        <button class="dropdown-item">Action - 1</button>
+        <button class="dropdown-item">Another Action</button>
+        <button class="dropdown-item">Something else is here</button>
+      </div>
+    </div>
+  </div>
+</div>
